@@ -1,2 +1,4 @@
 /* CLion cmake build */
 cmake-build-debug/
+/* JetBrains */
+.idea/
