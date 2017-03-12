@@ -57,7 +57,130 @@ include CMakeFiles/Projet.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Projet.dir/flags.make
 
-CMakeFiles/Projet.dir/requires:
+CMakeFiles/Projet.dir/include/Quadruplet.c.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/include/Quadruplet.c.o: ../include/Quadruplet.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nazruden/Licence/Compilation/Mini-Projet/Projet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Projet.dir/include/Quadruplet.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Projet.dir/include/Quadruplet.c.o   -c /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Quadruplet.c
+
+CMakeFiles/Projet.dir/include/Quadruplet.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Projet.dir/include/Quadruplet.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Quadruplet.c > CMakeFiles/Projet.dir/include/Quadruplet.c.i
+
+CMakeFiles/Projet.dir/include/Quadruplet.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Projet.dir/include/Quadruplet.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Quadruplet.c -o CMakeFiles/Projet.dir/include/Quadruplet.c.s
+
+CMakeFiles/Projet.dir/include/Quadruplet.c.o.requires:
+
+.PHONY : CMakeFiles/Projet.dir/include/Quadruplet.c.o.requires
+
+CMakeFiles/Projet.dir/include/Quadruplet.c.o.provides: CMakeFiles/Projet.dir/include/Quadruplet.c.o.requires
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Quadruplet.c.o.provides.build
+.PHONY : CMakeFiles/Projet.dir/include/Quadruplet.c.o.provides
+
+CMakeFiles/Projet.dir/include/Quadruplet.c.o.provides.build: CMakeFiles/Projet.dir/include/Quadruplet.c.o
+
+
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o: ../include/C3A_Interpretor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nazruden/Licence/Compilation/Mini-Projet/Projet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o   -c /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/C3A_Interpretor.c
+
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Projet.dir/include/C3A_Interpretor.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/C3A_Interpretor.c > CMakeFiles/Projet.dir/include/C3A_Interpretor.c.i
+
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Projet.dir/include/C3A_Interpretor.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/C3A_Interpretor.c -o CMakeFiles/Projet.dir/include/C3A_Interpretor.c.s
+
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.requires:
+
+.PHONY : CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.requires
+
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.provides: CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.requires
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.provides.build
+.PHONY : CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.provides
+
+CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.provides.build: CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o
+
+
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o: ../include/IMP_Interpretor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nazruden/Licence/Compilation/Mini-Projet/Projet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o   -c /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/IMP_Interpretor.c
+
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Projet.dir/include/IMP_Interpretor.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/IMP_Interpretor.c > CMakeFiles/Projet.dir/include/IMP_Interpretor.c.i
+
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Projet.dir/include/IMP_Interpretor.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/IMP_Interpretor.c -o CMakeFiles/Projet.dir/include/IMP_Interpretor.c.s
+
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.requires:
+
+.PHONY : CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.requires
+
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.provides: CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.requires
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.provides.build
+.PHONY : CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.provides
+
+CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.provides.build: CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o
+
+
+CMakeFiles/Projet.dir/include/Environment.c.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/include/Environment.c.o: ../include/Environment.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nazruden/Licence/Compilation/Mini-Projet/Projet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Projet.dir/include/Environment.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Projet.dir/include/Environment.c.o   -c /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Environment.c
+
+CMakeFiles/Projet.dir/include/Environment.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Projet.dir/include/Environment.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Environment.c > CMakeFiles/Projet.dir/include/Environment.c.i
+
+CMakeFiles/Projet.dir/include/Environment.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Projet.dir/include/Environment.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Environment.c -o CMakeFiles/Projet.dir/include/Environment.c.s
+
+CMakeFiles/Projet.dir/include/Environment.c.o.requires:
+
+.PHONY : CMakeFiles/Projet.dir/include/Environment.c.o.requires
+
+CMakeFiles/Projet.dir/include/Environment.c.o.provides: CMakeFiles/Projet.dir/include/Environment.c.o.requires
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Environment.c.o.provides.build
+.PHONY : CMakeFiles/Projet.dir/include/Environment.c.o.provides
+
+CMakeFiles/Projet.dir/include/Environment.c.o.provides.build: CMakeFiles/Projet.dir/include/Environment.c.o
+
+
+# Object files for target Projet
+Projet_OBJECTS = \
+"CMakeFiles/Projet.dir/include/Quadruplet.c.o" \
+"CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o" \
+"CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o" \
+"CMakeFiles/Projet.dir/include/Environment.c.o"
+
+# External object files for target Projet
+Projet_EXTERNAL_OBJECTS =
+
+Projet: CMakeFiles/Projet.dir/include/Quadruplet.c.o
+Projet: CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o
+Projet: CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o
+Projet: CMakeFiles/Projet.dir/include/Environment.c.o
+Projet: CMakeFiles/Projet.dir/build.make
+Projet: CMakeFiles/Projet.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nazruden/Licence/Compilation/Mini-Projet/Projet/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable Projet"
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Projet.dir/link.txt --verbose=$(VERBOSE)
+
+# Rule to build all files generated by this target.
+CMakeFiles/Projet.dir/build: Projet
+
+.PHONY : CMakeFiles/Projet.dir/build
+
+CMakeFiles/Projet.dir/requires: CMakeFiles/Projet.dir/include/Quadruplet.c.o.requires
+CMakeFiles/Projet.dir/requires: CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o.requires
+CMakeFiles/Projet.dir/requires: CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o.requires
+CMakeFiles/Projet.dir/requires: CMakeFiles/Projet.dir/include/Environment.c.o.requires
 
 .PHONY : CMakeFiles/Projet.dir/requires
 

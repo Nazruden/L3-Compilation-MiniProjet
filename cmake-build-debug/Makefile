@@ -123,6 +123,114 @@ Projet/fast:
 	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/build
 .PHONY : Projet/fast
 
+include/C3A_Interpretor.o: include/C3A_Interpretor.c.o
+
+.PHONY : include/C3A_Interpretor.o
+
+# target to build an object file
+include/C3A_Interpretor.c.o:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/C3A_Interpretor.c.o
+.PHONY : include/C3A_Interpretor.c.o
+
+include/C3A_Interpretor.i: include/C3A_Interpretor.c.i
+
+.PHONY : include/C3A_Interpretor.i
+
+# target to preprocess a source file
+include/C3A_Interpretor.c.i:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/C3A_Interpretor.c.i
+.PHONY : include/C3A_Interpretor.c.i
+
+include/C3A_Interpretor.s: include/C3A_Interpretor.c.s
+
+.PHONY : include/C3A_Interpretor.s
+
+# target to generate assembly for a file
+include/C3A_Interpretor.c.s:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/C3A_Interpretor.c.s
+.PHONY : include/C3A_Interpretor.c.s
+
+include/Environment.o: include/Environment.c.o
+
+.PHONY : include/Environment.o
+
+# target to build an object file
+include/Environment.c.o:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Environment.c.o
+.PHONY : include/Environment.c.o
+
+include/Environment.i: include/Environment.c.i
+
+.PHONY : include/Environment.i
+
+# target to preprocess a source file
+include/Environment.c.i:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Environment.c.i
+.PHONY : include/Environment.c.i
+
+include/Environment.s: include/Environment.c.s
+
+.PHONY : include/Environment.s
+
+# target to generate assembly for a file
+include/Environment.c.s:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Environment.c.s
+.PHONY : include/Environment.c.s
+
+include/IMP_Interpretor.o: include/IMP_Interpretor.c.o
+
+.PHONY : include/IMP_Interpretor.o
+
+# target to build an object file
+include/IMP_Interpretor.c.o:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o
+.PHONY : include/IMP_Interpretor.c.o
+
+include/IMP_Interpretor.i: include/IMP_Interpretor.c.i
+
+.PHONY : include/IMP_Interpretor.i
+
+# target to preprocess a source file
+include/IMP_Interpretor.c.i:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/IMP_Interpretor.c.i
+.PHONY : include/IMP_Interpretor.c.i
+
+include/IMP_Interpretor.s: include/IMP_Interpretor.c.s
+
+.PHONY : include/IMP_Interpretor.s
+
+# target to generate assembly for a file
+include/IMP_Interpretor.c.s:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/IMP_Interpretor.c.s
+.PHONY : include/IMP_Interpretor.c.s
+
+include/Quadruplet.o: include/Quadruplet.c.o
+
+.PHONY : include/Quadruplet.o
+
+# target to build an object file
+include/Quadruplet.c.o:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Quadruplet.c.o
+.PHONY : include/Quadruplet.c.o
+
+include/Quadruplet.i: include/Quadruplet.c.i
+
+.PHONY : include/Quadruplet.i
+
+# target to preprocess a source file
+include/Quadruplet.c.i:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Quadruplet.c.i
+.PHONY : include/Quadruplet.c.i
+
+include/Quadruplet.s: include/Quadruplet.c.s
+
+.PHONY : include/Quadruplet.s
+
+# target to generate assembly for a file
+include/Quadruplet.c.s:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Quadruplet.c.s
+.PHONY : include/Quadruplet.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +240,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Projet"
+	@echo "... include/C3A_Interpretor.o"
+	@echo "... include/C3A_Interpretor.i"
+	@echo "... include/C3A_Interpretor.s"
+	@echo "... include/Environment.o"
+	@echo "... include/Environment.i"
+	@echo "... include/Environment.s"
+	@echo "... include/IMP_Interpretor.o"
+	@echo "... include/IMP_Interpretor.i"
+	@echo "... include/IMP_Interpretor.s"
+	@echo "... include/Quadruplet.o"
+	@echo "... include/Quadruplet.i"
+	@echo "... include/Quadruplet.s"
 .PHONY : help
 
 
