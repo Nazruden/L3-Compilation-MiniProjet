@@ -22,7 +22,15 @@ typedef struct {
     Quad end;
 } Bilquad;
 
+/** FUNCTIONS **/
 Quad Quad_create(char *etiq, int op, Arg *arg1, Arg *arg2, char* dest);
-Bilquad Bilquad_creaate()
+
+Bilquad Bilquad_create(Quad q);
+
+Bilquad Bilquad_concat(Bilquad b1, Bilquad b2);
+
+Quad Quad_search(char *etiq, Quad q);
+
+Quad Bilquad_search(char *etiq, Bilquad b);
 
 #endif //PROJET_QUADRUPLET_H
