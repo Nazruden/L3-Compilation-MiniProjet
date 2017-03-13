@@ -123,6 +123,33 @@ Projet/fast:
 	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/build
 .PHONY : Projet/fast
 
+include/Argument.o: include/Argument.c.o
+
+.PHONY : include/Argument.o
+
+# target to build an object file
+include/Argument.c.o:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Argument.c.o
+.PHONY : include/Argument.c.o
+
+include/Argument.i: include/Argument.c.i
+
+.PHONY : include/Argument.i
+
+# target to preprocess a source file
+include/Argument.c.i:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Argument.c.i
+.PHONY : include/Argument.c.i
+
+include/Argument.s: include/Argument.c.s
+
+.PHONY : include/Argument.s
+
+# target to generate assembly for a file
+include/Argument.c.s:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Argument.c.s
+.PHONY : include/Argument.c.s
+
 include/C3A_Interpretor.o: include/C3A_Interpretor.c.o
 
 .PHONY : include/C3A_Interpretor.o
@@ -240,6 +267,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Projet"
+	@echo "... include/Argument.o"
+	@echo "... include/Argument.i"
+	@echo "... include/Argument.s"
 	@echo "... include/C3A_Interpretor.o"
 	@echo "... include/C3A_Interpretor.i"
 	@echo "... include/C3A_Interpretor.s"

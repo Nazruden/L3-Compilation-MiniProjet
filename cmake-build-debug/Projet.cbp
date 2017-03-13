@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Argument.c">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Argument.h">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/C3A_Interpretor.c">
 			<Option target="Projet"/>
 		</Unit>
@@ -100,9 +106,6 @@
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/IMP_Interpretor.h">
-			<Option target="Projet"/>
-		</Unit>
-		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Nouveau document">
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Quadruplet.c">
