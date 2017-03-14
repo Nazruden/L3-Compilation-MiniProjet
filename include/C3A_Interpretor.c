@@ -1,21 +1,16 @@
 //
 // Created by nazruden on 3/12/17.
 //
+
 #include "C3A_Interpretor.h"
+#include "Quadruplet.h"
 
 void C3A_Interpretor_simulate(Bilquad b, Environment e){
     /* The current quad being executed */
     Quad qCurrent = b->begin;
-    do {
-        // If there's a "St" instruction
-        if(C3A_evalQuadruplet(qCurrent, e, b) == 0){
-            return;
-        }
-        // Looping through next quad
-        else {
-            qCurrent = qCurrent->next;
-        }
-    } while(qCurrent != NULL && b->begin != b->end);
+    while(qCurrent != NULL && b->begin != b->end){
+        qCurrent = C3A_Interpretor_executeQuad(qCurrent, e, b);
+    }
 }
 
 Quad C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b){
@@ -30,34 +25,34 @@ Quad C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b){
         case Pl:
             opRes = Arg_getValue(q->arg1, e) + Arg_getValue(q->arg2, e);
             Environment_setValue(e, q->dest, opRes);
-            return 1;
+            return q->qNext;
         // Substract
         case Mo:
             opRes = Arg_getValue(q->arg1, e) - Arg_getValue(q->arg2, e);
             Environment_setValue(e, q->dest, opRes);
-            return 1;
+            return q->qNext;
         // Multiply
         case Mu:
             opRes = Arg_getValue(q->arg1, e) * Arg_getValue(q->arg2, e);
             Environment_setValue(e, q->dest, opRes);
-            return 1;
+            return q->qNext;
         // Affect
         case Af:
             opRes = Arg_getValue(q->arg2, e);
             Environment_setValue(e, q->dest, opRes);
-            return 1;
+            return q->qNext;
         case Afc:
             opRes = Arg_getValue(q->arg1, e);
             Environment_setValue(e, q->dest, opRes);
-            return 1;
+            return q->qNext;
         case Sk:
+            return q->qNext;
         case Jp:
             qNext = Bilquad_search(q->dest, b);
             // Checking error : destination not found
             if(qNext != NULL)
             {
-                q->next = qNext;
-                return 1;
+                return qNext;
             }
             else {
                 printf("Unable to find jump destination '%s'.\n", q->dest);
@@ -65,23 +60,25 @@ Quad C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b){
             }
         case Jz:
             opRes = Arg_getValue(q->arg1, e);
+            // Arg1 must be empty for Jz to make a jump
             if(opRes != 0) {
-                return 1;
+                return q->qNext;
             }
             else {
                 qNext = Bilquad_search(q->dest, b);
+                // Checking if the specified quad was found
                 if(qNext != NULL){
-                    q->next = qNext;
-                    return true;
+                    return qNext;
                 }
+                // If not, exiting with error
                 else {
                     printf("Unable to find jump destination '%s'.\n", q->dest);
                 }
             }
         case St:
-            return 0;
+            return NULL;
         default:
-            return 1;
+            return NULL;
 
     }
 }

@@ -11,7 +11,7 @@ Quad Quad_create(char *etiq, int op, Arg *arg1, Arg *arg2, char* dest){
     qd->arg1 = arg1;
     qd->arg2 = arg2;
     qd->dest = dest;
-    qd->next = NULL;
+    qd->qNext = NULL;
     return qd;
 }
 
@@ -25,7 +25,7 @@ Bilquad Bilquad_concat(Bilquad b1, Bilquad b2){
     Bilquad b = malloc(sizeof(Bilquad));
     if(b1->end != NULL){
         if(b2->begin != NULL){
-            b1->end->next = b2->begin;
+            b1->end->qNext = b2->begin;
             b->begin = b1->begin;
             b->end = b2->end;
             free(b1);
@@ -48,7 +48,7 @@ Quad Quad_search(char* etiq, Quad q){
             return qCurrent;
         }
         else {
-            return Quad_search(etiq, qCurrent->next);
+            return Quad_search(etiq, qCurrent->qNext);
         }
     }
     else {

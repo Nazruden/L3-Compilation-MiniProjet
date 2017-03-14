@@ -17,7 +17,7 @@ typedef struct Quadruplet{
     Arg *arg1;
     Arg *arg2;
     char *dest;
-    struct Quadruplet *next;
+    struct Quadruplet *qNext;
 } *Quad;
 
 typedef struct {

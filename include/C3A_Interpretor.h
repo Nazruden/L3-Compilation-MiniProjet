@@ -23,6 +23,6 @@ void C3A_Interpretor_simulate(Bilquad b, Environment e);
  * @param b
  * @return
  */
-int C3A_evalQuadruplet(Quad q, Environment e, Bilquad b);
+Quad C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b);
 
 #endif //PROJET_C3A_INTERPRETOR_H
