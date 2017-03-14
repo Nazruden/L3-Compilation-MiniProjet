@@ -1,15 +1,16 @@
-/* Lexical tokens for IMP */
+ /* Lexical tokens for IMP */
 %{
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
-    #include "imp.tab.h"
+    #include "tmp/imp.tab.h"
 %}
 
 %option yylineno
 
 %%
 
+ /* Operators */
 ":=" { return Af; }
 "skip" { return Sk; }
 ";" { return Se; }
@@ -24,12 +25,12 @@
 "(" { return Open; }
 ")" { return Close; }
 
-/* Manage integers */
+ /* Manage integers */
 ([1-9][0-9]*)|0 {yylval.constant = atoi(yytext);return I; }
-/* Manage variables
+ /* Manage variables
 [a-zA-Z_][a-zA-Z0-9_]* { yylval.variable = strdup(yytext); return V; }
 
-/* Handle line return */
+ /* Handle line return */
 [ \t\n] {;}
 
 . {;}

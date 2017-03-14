@@ -39,6 +39,13 @@ void Env_initEnv(Environment e);
 void Env_addValue(Environment *e, char *Id, int value);
 
 /**
+ * Set value function
+ * @param e : the Environment where the cell has to be set
+ * @param Id : the Id of the cell
+ * @param value : the value of the cell
+ */
+void Environment_setValue(Environment e, char *Id, int value);
+/**
  * Environment value getter
  * @param e : the Environment concerned
  * @param Id : the Id of the value to retrieve

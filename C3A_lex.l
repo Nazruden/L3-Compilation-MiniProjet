@@ -1,16 +1,16 @@
-/* recognize tokens for the calculator and print them out */
+ /* Lexical tokens for C3A */
 %{
     #include <stdio.h>
     #include <stdlib.h>
     #include <string.h>
-    #include "c3a.tab.h"
+    #include "tmp/c3a.tab.h"
 %}
 
 %option yylineno
 
 %%
 
-/* Operators */
+ /* Operators */
 "Pl" {return Pl;}
 "Mo" {return Mo;}
 "Mu" {return Mu;}
@@ -28,9 +28,9 @@
 ":" {return Sp;}
 \n {return Se;}
 
-/* Manage integers */
-([1-9][0-9]*)|0 {yylval.constant = atoi(yytext);return I; }
-/* Manage variables */
+ /* Manage integers */
+([1-9][0-9]*)|0 { yylval.constant = atoi(yytext); return I; }
+ /* Manage variables */
 [a-zA-Z_][a-zA-Z0-9_]* { yylval.variable = strdup(yytext); return V; }
 
 [ \t] {;} //Ignore
