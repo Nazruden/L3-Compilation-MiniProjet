@@ -3,9 +3,9 @@
 //
 #include "C3A_Interpretor.h"
 
-void C3A_Interpretor_execute(Bilquad b, Environment e){
+void C3A_Interpretor_simulate(Bilquad b, Environment e){
     /* The current quad being executed */
-    Quad qCurrent = b.begin;
+    Quad qCurrent = b->begin;
     do {
         // If there's a "St" instruction
         if(C3A_evalQuadruplet(qCurrent, e, b) == 0){
@@ -15,10 +15,10 @@ void C3A_Interpretor_execute(Bilquad b, Environment e){
         else {
             qCurrent = qCurrent->next;
         }
-    } while(qCurrent != NULL && b.begin != b.end);
+    } while(qCurrent != NULL && b->begin != b->end);
 }
 
-int C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b){
+Quad C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b){
 
     /* Variables used */
     Quad qNext; // for jumps

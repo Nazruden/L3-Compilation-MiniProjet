@@ -258,6 +258,33 @@ include/Quadruplet.c.s:
 	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Quadruplet.c.s
 .PHONY : include/Quadruplet.c.s
 
+include/Syntax_Tree.o: include/Syntax_Tree.c.o
+
+.PHONY : include/Syntax_Tree.o
+
+# target to build an object file
+include/Syntax_Tree.c.o:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Syntax_Tree.c.o
+.PHONY : include/Syntax_Tree.c.o
+
+include/Syntax_Tree.i: include/Syntax_Tree.c.i
+
+.PHONY : include/Syntax_Tree.i
+
+# target to preprocess a source file
+include/Syntax_Tree.c.i:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Syntax_Tree.c.i
+.PHONY : include/Syntax_Tree.c.i
+
+include/Syntax_Tree.s: include/Syntax_Tree.c.s
+
+.PHONY : include/Syntax_Tree.s
+
+# target to generate assembly for a file
+include/Syntax_Tree.c.s:
+	$(MAKE) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/include/Syntax_Tree.c.s
+.PHONY : include/Syntax_Tree.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -282,6 +309,9 @@ help:
 	@echo "... include/Quadruplet.o"
 	@echo "... include/Quadruplet.i"
 	@echo "... include/Quadruplet.s"
+	@echo "... include/Syntax_Tree.o"
+	@echo "... include/Syntax_Tree.i"
+	@echo "... include/Syntax_Tree.s"
 .PHONY : help
 
 

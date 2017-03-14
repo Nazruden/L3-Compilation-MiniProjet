@@ -114,6 +114,12 @@
 		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Quadruplet.h">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Syntax_Tree.c">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/include/Syntax_Tree.h">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/home/nazruden/Licence/Compilation/Mini-Projet/Projet/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

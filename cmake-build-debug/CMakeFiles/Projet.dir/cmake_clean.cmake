@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Projet.dir/include/IMP_Interpretor.c.o"
   "CMakeFiles/Projet.dir/include/Environment.c.o"
   "CMakeFiles/Projet.dir/include/Argument.c.o"
+  "CMakeFiles/Projet.dir/include/Syntax_Tree.c.o"
   "Projet.pdb"
   "Projet"
 )
