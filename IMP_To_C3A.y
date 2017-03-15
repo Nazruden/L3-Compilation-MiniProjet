@@ -6,6 +6,7 @@
   	#include "include/Syntax_Tree.h"
   	#include "include/IMP_Compiler.h"
 
+
 	int yyerror(char *s);
 	int yylex();
 	int yylineno;
@@ -84,4 +85,7 @@ int yyerror(char *s){
 int main(){
 	yyparse();
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5e9cff854c68119a5774ca8eb33a0e2222436633
