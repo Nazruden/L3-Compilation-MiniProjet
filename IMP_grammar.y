@@ -19,6 +19,7 @@
 		char* variable;
 		struct Ast *node;
 	}
+
 	%token<variable>V
 	%token<constant>I
 	%token Af Sk Se If Th Wh Do Pl Mo Mu Open Close
@@ -37,8 +38,8 @@
 
 /* Un programme est une suite de déclaration (C) composé de déclaration atomique (C0) */ 
 prog: C	{ 
-	 		Env env;
-			Env_init(&env);
+	 		Environment env;
+			Environment_initEnv(&env);
 			Ast_IMP_run($1, &env);
 			Env_print(&env);
 	 	}

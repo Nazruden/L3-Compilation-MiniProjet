@@ -46,7 +46,7 @@
 /* We shall begin by initializing the Environment variable */
 app: C	{
 			Environment e;
-			Env_initEnv(e);
+			Environment_initEnv(e);
 			C3A_run($1, e);
 			Env_print(&env);
 	 	}

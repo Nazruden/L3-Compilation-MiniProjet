@@ -7,7 +7,7 @@
  * TODO : Implémentation des méthodes de gestion de la structure d'Environnement
  */
 
-void Env_initEnv(Environment e){
+void Environment_initEnv(Environment e){
     e->Id = NULL;
     e->next = NULL;
     e->val = NULL;
@@ -17,7 +17,7 @@ Environment Env_allocCell(){
     return ((Environment)malloc(sizeof(struct EnvCell)));
 }
 
-void Env_addValue(Environment *e, char *Id, int value){
+void Environment_addValue(Environment *e, char *Id, int value){
     Environment newCell = Env_allocCell();
     strcpy(newCell->Id,Id);
     newCell->val = value;
@@ -25,7 +25,7 @@ void Env_addValue(Environment *e, char *Id, int value){
     *e = newCell;
 }
 
-int Env_getValue(Environment e, char *Id){
+int Environment_getValue(Environment e, char *Id){
     return Env_searchCell(e, Id)->val;
 }
 
@@ -41,7 +41,7 @@ Environment Env_searchCell(Environment e, char *Id){
         return NULL;
 }
 
-void Env_printEnv(Environment e){
+void Environment_printEnv(Environment e){
     if(e == NULL){
         printf(" -- Fin d'environnement\n");
     }

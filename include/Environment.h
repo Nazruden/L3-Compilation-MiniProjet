@@ -11,10 +11,6 @@
 #include <string.h>
 
 /**
- * TODO : Header des méthodes de gestion de l'Environnement (structure)
- */
-
-/**
  * EnvCell struct with "Environment" alias
  */
 typedef struct EnvCell{
@@ -28,7 +24,7 @@ typedef struct EnvCell{
  * Init function
  * @param e : the Environment to init.
  */
-void Env_initEnv(Environment e);
+void Environment_initEnv(Environment e);
 
 /**
  * Add value function
@@ -36,7 +32,7 @@ void Env_initEnv(Environment e);
  * @param Id : the Id of the cell
  * @param value : the value of the cell
  */
-void Env_addValue(Environment *e, char *Id, int value);
+void Environment_addValue(Environment *e, char *Id, int value);
 
 /**
  * Set value function
@@ -51,7 +47,7 @@ void Environment_setValue(Environment e, char *Id, int value);
  * @param Id : the Id of the value to retrieve
  * @return the value attached to specified Id if it exists in e
  */
-int Env_getValue(Environment e, char *Id);
+int Environment_getValue(Environment e, char *Id);
 
 /**
  * Research function
@@ -65,7 +61,7 @@ Environment Env_searchCell(Environment e, char *Id);
  * Print function
  * @param e : the Environment to print
  */
-void Env_printEnv(Environment e);
+void Environment_printEnv(Environment e);
 
 /** CONSTANTS **/
 #define MAXID_LENGTH 16
