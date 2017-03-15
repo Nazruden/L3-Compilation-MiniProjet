@@ -17,7 +17,7 @@
 void C3A_Interpretor_simulate(Bilquad b, Environment e);
 
 /**
- * C3A_EVALQUADRUPLET : Function used to simulate the execution of a C3A Quadruplet
+ * C3A_INTERPRETOR_EXECUTEQUAD : Function used to simulate the execution of a C3A Quadruplet
  * @param q
  * @param e
  * @param b
