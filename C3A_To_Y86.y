@@ -23,18 +23,20 @@
 		struct Bilquad* bilquad;
 	}
 
-    // VARIABLES
-	%token<var>V
-	// INTEGERS
-	%token<constant>I
-	// OPERATORS
-	%token Open Close Pl Mo Mu Af Afc Sk Jp Jz St Sp Se Minus Plus
     // Arguments / values
 	%type<arg> F FI
 	// Bilquad - Liste chaînée de Quadruplets
 	%type<bilquad> C
 	// QUAD
 	%type<quad> O
+
+    // VARIABLES
+	%token<var>V
+	// INTEGERS
+	%token<constant>I
+	// OPERATORS
+	%token Open Close Pl Mo Mu Af Afc Sk Jp Jz St Sp Se Minus Plus
+
 
     // ASSOCIATIVITY
     %left Se

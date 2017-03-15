@@ -8,6 +8,8 @@
 	#include "include/Ast.h"
 	#include "include/IMP.h"
 	#include "include/Env.h"
+
+
 	int yyerror(char *s);
 	int yylex();
 	int yylineno;
@@ -84,3 +86,7 @@ int main()
 {
 	yyparse();
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5e9cff854c68119a5774ca8eb33a0e2222436633
