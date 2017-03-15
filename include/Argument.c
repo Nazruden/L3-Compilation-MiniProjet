@@ -29,15 +29,19 @@ Arg* Arg_create(char type, void* value){
 }
 
 int Arg_getValue(struct Argument* arg, Environment e){
+    /* GETTING A VARIABLE */
     if(arg->type == 'V'){
-        if(Env_key_exists(env, (char*)value->value) == false)
-        {
-            printf("Variable '%s' indéfinie.\n", (char*)value->value);
+        int value = Environment_getValue(e, (char*)arg->value);
+        if(value != NULL) {
+            return value;
+        }
+        else {
+            printf("Undefined argument value '%s'.\n", (char*)arg->value);
             exit(1);
         }
-        return Env_get_value(env, (char*)value->value);
     }
+    /* GETTING AN INTEGER */
     else if(arg->type == 'I'){
-        return *(int*)value->value;
+        return *(int*)arg->value;
     }
 }
