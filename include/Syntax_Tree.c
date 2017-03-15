@@ -1,6 +1,3 @@
-//
-// Created by nazruden on 3/14/17.
-//
 #include "Syntax_Tree.h"
 
 STree STree_create(int type, int op, STree lSon, STree rSon){

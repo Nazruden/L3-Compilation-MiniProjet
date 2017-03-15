@@ -1,6 +1,3 @@
-//
-// Created by nazruden on 3/12/17.
-//
 #include "Quadruplet.h"
 
 Quad Quad_create(char *etiq, int op, Arg *arg1, Arg *arg2, char* dest){

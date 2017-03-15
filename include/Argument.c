@@ -1,6 +1,3 @@
-//
-// Created by nazruden on 3/12/17.
-//
 #include "Argument.h"
 
 Arg* Arg_create(char type, void* value){

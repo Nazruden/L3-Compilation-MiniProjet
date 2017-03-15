@@ -4,8 +4,7 @@
   	#include "include/Environment.h"
   	// Specific
   	#include "include/Syntax_Tree.h"
-  	#include "include/IMP_Compiler.h"
-
+  	#include "include/IMP_Interpretor.h"
 
 	int yyerror(char *s);
 	int yylex();
@@ -16,9 +15,9 @@
 
     /* Types used */
 	%union {
-		STree tree;
-		int constant;
-		char* variable;
+        STree tree;
+	    int constant;
+        char* variable;
 	}
 
     // TREES
@@ -39,10 +38,14 @@
 
 %%
 
- /* In this program, we will just compile the IMP code to C3A one */
+ /* In this program, we will just interpret the analysed IMP code and print the Environment resulting */
 app: C {
-	 		// Calling the compiler function
-	 		IMP_compile_in_C3A($1);
+            // Initing environment
+	 		Environment e;
+			Environment_initEnv(&e);
+			// Interpreting IMP code
+			IMP_Interpretor_launch($1, e);
+			Environment_printEnv(e);
 	   }
     ;
 
@@ -81,9 +84,7 @@ int yyerror(char *s){
     fprintf(stderr, "error: %s near %d\n", s, yylineno);
 }
 
-/* Main Function */
+/* Main function */
 int main(){
 	yyparse();
 }
-
-

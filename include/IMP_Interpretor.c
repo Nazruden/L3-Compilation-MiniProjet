@@ -91,7 +91,7 @@ int IMP_Interpretor_launch(STree t, Environment e){
                 // Getting values and returning result
                 return IMP_Interpretor_launch(t->lSon, e) * IMP_Interpretor_launch(t->rSon, e);
             default:
-            break;
+                break;
         }
     }
     else {

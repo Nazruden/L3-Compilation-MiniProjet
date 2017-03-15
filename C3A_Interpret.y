@@ -1,7 +1,9 @@
 %{
     /* INCLUDES */
 	#include <stdio.h>
+	#include <string.h>
 	#include "include/Environment.h"
+	// Specific
 	#include "include/Quadruplet.h"
 	#include "include/C3A_Interpretor.h"
 
@@ -14,19 +16,13 @@
 
     /* Types used */
 	%union {
+        Quad quad;
+        Bilquad bilquad;
+	    Arg *arg;
 		int constant;
-		char* var;
-		struct Arg* arg;
-		struct Quad quad;
-		struct Bilquad* bilquad;
+		char *var;
 	}
 
-    // VARIABLES
-	%token<var>V
-	// INTEGERS
-	%token<constant>I
-	// OPERATORS
-	%token Open Close Pl Mo Mu Af Afc Sk Jp Jz St Sp Se Minus Plus
     // Arguments / values
 	%type<arg> F FI
 	// Bilquad - Liste chaînée de Quadruplets
@@ -34,22 +30,31 @@
 	// QUAD
 	%type<quad> O
 
+    // VARIABLES
+	%token<var>V
+	// INTEGERS
+	%token<constant>I
+	// OPERATORS
+	%token Open Close Pl Mo Mu Af Afc Sk Jp Jz St Sp Se Minus Plus
+
     // ASSOCIATIVITY
     %left Se
 	%left Pl Mo
 	%left Mu
 	%left Open
-	
 
 %%
 
-/* We shall begin by initializing the Environment variable */
-app: C	{
+/* In this program, we will just interpret the analysed C3A code and print the Environment resulting from this */
+app: C {
+            // Initing environment
 			Environment e;
 			Environment_initEnv(e);
-			C3A_run($1, e);
-			Env_print(&env);
-	 	}
+			// Simulating app
+			C3A_Interpretor_simulate($1, e);
+			// Printing environment we got from this
+			Environment_print(&env);
+	   }
     ;
 
 
@@ -84,14 +89,12 @@ FI : I
 %%
 
 /* Handling error function */
-int yyerror(char *s)
-{
+int yyerror(char *s){
     fprintf(stderr, "Error detected: %s at %d\n", s, yylineno);
 }
 
 /* Main Function */
-int main()
-{
+int main(){
 	yyparse();
 }
 
