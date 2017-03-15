@@ -1,27 +1,39 @@
 #ifndef PROJET_C3A_COMPILER_H
-#define PROJET_C3A_COMPILER_H
+#define Comp_C3A_H
 
 #include "Environment.h"
 #include "Quadruplet.h"
 #include "./../tmp/c3a.tab.h"
 
 
-
 /** FUNCTIONS **/
+/**
+ * IMP_COMPILE_TO_C3A : Function used to count Y86 instructions needed to compile from C3A code
+ * @param list : C3A code
+ * @return : nb instructions
+ */
+int C3A_count_instructions(struct Bilquad* list);
 
 /**
- * C3A_EVAL : Function used to update @e resulting from execution of the C3A command @list
- * @param list : C3A code
- * @param quad : C3A command
- * @param e : current environment
-*/
-struct Quad* C3A_eval(struct Bilquad* list, struct Quad* quad, Environment* e);
+* C3A_INIT_VARIABLES : Function used to init Y86 memory for C3A variables
+* @param list : C3A code
+* @param memory_end : first free variable's memory emplacement
+* @return : Environment
+**/
+Environment* C3A_init_variables(struct Bilquad* list, int* memory_end);
 
 /**
- * C3A_EXECUTE : Function used to run and execute C3A program
- * @param list : C3A code
- * @param e : environment variables
-*/
-void C3A_execute(struct Bilquad* list, Environment* e);
+* C3A_COMPILE_IN_Y86 : Function used to compile a C3A program in Y86 program
+* @param list : C3A code
+**/
+void C3A_compile_in_Y86(struct Bilquad* list);
+
+/**
+* C3A_Y86_TRANSLATER : Function used to translate C3A code in Y86 instructions
+* @param q : C3A code
+* @param memory_begin : beginning of the variable's memory used
+* @param vOffset: environment composed by variables associated to its memory location
+**/
+void C3A_Y86_translater(struct Quad* q, int memory_begin, Environment* vOffset);
 
 #endif
