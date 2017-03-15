@@ -16,7 +16,7 @@ Quad Quad_create(char *etiq, int op, Arg *arg1, Arg *arg2, char* dest){
 }
 
 Bilquad Bilquad_create(Quad q){
-    Bilquad bq = malloc(sizeof Bilquad);
+    Bilquad bq = malloc(sizeof(Bilquad));
     bq->begin = q; bq->end = q;
     return bq;
 }
@@ -59,4 +59,3 @@ Quad Quad_search(char* etiq, Quad q){
 Quad Bilquad_search(char* etiq, Bilquad b){
     return Quad_search(etiq, b->begin);
 }
-

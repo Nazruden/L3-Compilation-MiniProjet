@@ -1,4 +1,5 @@
 #include "C3A_Compiler.h"
+
 int loopCounter = 0;
 
 int C3A_count_instructions(struct Bilquad* list)
