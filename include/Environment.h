@@ -55,7 +55,7 @@ int Environment_getValue(Environment e, char *Id);
  * @param Id : the Id of the cell we're looking for.
  * @return the cell with specified id if it exists.
  */
-Environment Env_searchCell(Environment e, char *Id);
+Environment Environment_searchCell(Environment e, char *Id);
 
 /**
  * Print function
