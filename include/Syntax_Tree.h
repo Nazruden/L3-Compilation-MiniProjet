@@ -5,9 +5,14 @@
 #ifndef PROJET_SYNTAX_TREE_H
 #define PROJET_SYNTAX_TREE_H
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * TODO
+ * SYNTAX_TREE : Structure used to recreate an Abstract Syntax Tree. Here used to translate IMP instructions and manipulate them through a tree structure
+ * @var type : the type of the node (Integer / Variable)
+ * @var val : value of the node, made void pointer to accept different types
+ * @var lSon : left son of the tree / node
+ * @var rSon : right son of the tree / node
  */
 typedef struct Syntax_Tree {
     int type;

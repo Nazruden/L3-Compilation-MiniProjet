@@ -1,99 +1,100 @@
 #include "IMP_Interpretor.h"
 
-
-struct STree* Ast_IMP_init_leaf(int type, void* value)
-{
-    if(type == 'I')
-    {
-        int* tmp = malloc(sizeof(int));
-        memcpy(tmp, value, sizeof(int));
-        value=tmp;
-    }
-    else if(type == 'V')
-    {
-        int len = strlen((char*)value) + 1;
-        char* tmp = malloc(len*sizeof(char));
-        memcpy(tmp, value, len*sizeof(char));
-        value = tmp;
-    }
-    return STree_createLeaf(type, value);
-}
-
-
-int IMP_Interpretor_execute(struct STree* sTr, Environment *e)
-{
-    // Si AST est nul, on retourne 0 sans l'executer
-    if(sTr == 0)
-    {
-        return 0;
-    }
-    if(sTr->type == 'V')
-    {
-            char* key = (char*)sTr->val;
-  /*
-            if(Env_key_exists(e, key) == false)
-            {
-                printf("Impossible d'utiliser une variable non déclarée.\n");
+int IMP_Interpretor_launch(STree t, Environment e){
+    /** We first need to check the validity of the tree and
+     *  determine if we're on a leaf of the tree or not to
+     *  define the workflow
+     */
+    if(t != NULL){
+        /** Leaf cases : Integers / Variables **/
+        // Integer : returning the value directly
+        if(t->type == 'I'){
+            return *(int*)t->val;
+        }
+        // Variable : retrieving value through the Environment
+        else if(t->type == 'V'){
+            // Obtaining value with its Id
+            char *Id = (char*)t->val;
+            int tmp = Environment_getValue(e, Id);
+            // Value found
+            if(tmp != NULL){
+                return tmp;
+            }
+            // Managing not found error
+            else {
+                printf("Unable to find value of the variable node '%s' in tree.\n", Id);
                 exit(1);
             }
-  */
-            return Environment_get_value(e, key);
+        }
+
+        /** Not-leaf cases **/
+        /* VARIABLES USED */
+        // Getting the node operator
+        int op = *(int*)t->val;
+        // Id for affectation
+        char *Id;
+        // Temporary operation members
+        int mem1, mem2, mem3;
+
+        /* SWITCH ON OPERATOR */
+        switch(op){
+            // Affect
+            case Af:
+                // Getting id to set in Environment e
+                Id = (char*)t->lSon->val;
+                // Retrieving value of the right son
+                mem1 = IMP_Interpretor_launch(t->rSon, e);
+                // Setting value in Environment e
+                Environment_setValue(e, Id, mem1);
+
+                return 1;
+            // Skip
+            case Sk:
+                // Nothing to do, just returning
+                return 1;
+            // Separator
+            case Se:
+                // Just interpreting the two sons of t
+                IMP_Interpretor_launch(t->lSon, e);
+                IMP_Interpretor_launch(t->rSon, e);
+
+                return 1;
+            // If
+            case If:
+                // Getting result of left son expression and interpreting the right expression in consequence
+                if(IMP_Interpretor_launch(t->lSon, e)){
+                    return IMP_Interpretor_launch(t->rSon->lSon, e);
+                }
+                else {
+                    return IMP_Interpretor_launch(t->rSon->rSon, e);
+                }
+            // While
+            case Wh:
+                mem1 = IMP_Interpretor_launch(t->lSon, e);
+                // While the interpreted expression is ok
+                while(mem1){
+                    IMP_Interpretor_launch(t->rSon, e);
+                    // Looping on the same expression
+                    mem1 = IMP_Interpretor_launch(t->lSon, e);
+                }
+                return 1;
+            // Add
+            case Pl:
+                // Getting values and returning result
+                return IMP_Interpretor_launch(t->lSon, e) + IMP_Interpretor_launch(t->rSon, e);
+            // Substract
+            case Mo:
+                // Getting values and returning result
+                return IMP_Interpretor_launch(t->lSon, e) - IMP_Interpretor_launch(t->rSon, e);
+            // Multiply
+            case Mu:
+                // Getting values and returning result
+                return IMP_Interpretor_launch(t->lSon, e) * IMP_Interpretor_launch(t->rSon, e);
+            default:
+            break;
+        }
     }
-    else if(sTr->type == 'I')
-    {
-            return *(int*)sTr->val;
-    }
-    // On arrive ici si le noeud n'est pas une feuille
-    int ope = *(int*)sTr->val;
-    //printf("Running ope %d\n", ope);
-    int tmp, tmp1, tmp2;
-    char* key;
-    switch(ope)
-    {
-        case Sk:
-            return 1;
-        case Se:
-            IMP_Interpretor_execute(sTr->lSon, e);
-            IMP_Interpretor_execute(sTr->rSon, e);
-            return 1;
-        case Af:
-            key = (char*)sTr->lSon->value;
-            tmp = IMP_Interpretor_execute(sTr->rSon, e);
-            Environment_set_value(e, key, tmp);
-            //printf("%s <- %d\n", key, tmp);
-            return 1;
-        case If:
-            tmp = IMP_Interpretor_execute(sTr->lSon, e);
-            if(tmp)
-            {
-                return IMP_Interpretor_execute(sTr->rSon->lSon, e);
-            }
-            else
-            {
-                return IMP_Interpretor_execute(sTr->rSon->rSon, e);
-            }
-            return 1;
-        case Wh:
-            tmp = IMP_Interpretor_execute(sTr->lSon, e);
-            //printf("While\n");
-            while(tmp)
-            {
-                IMP_Interpretor_execute(sTr->rSon, e);
-                tmp = IMP_Interpretor_execute(sTr->lSon, e);
-            }
-            return 1;
-        case Pl:
-            tmp1 = IMP_Interpretor_execute(sTr->lSon, e);
-            tmp2 = IMP_Interpretor_execute(sTr->rSon, e);
-            tmp =  tmp1 + tmp2 ;
-            //printf("%d = %d + %d\n", tmp, tmp1, tmp2);
-            return tmp;
-        case Mo:
-            return IMP_Interpretor_execute(sTr->lSon, e) - IMP_Interpretor_execute(sTr->rSon, e);
-        case Mu:
-            return IMP_Interpretor_execute(sTr->lSon, e) * IMP_Interpretor_execute(sTr->rSon, e);
-        default:
-            printf("Instruction non reconnue\n");
-        break;
+    else {
+        return 0;
     }
 }

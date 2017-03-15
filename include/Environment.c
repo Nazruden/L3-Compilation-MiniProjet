@@ -13,12 +13,12 @@ void Environment_initEnv(Environment e){
     e->val = NULL;
 }
 
-Environment Env_allocCell(){
+Environment Environment_allocCell(){
     return ((Environment)malloc(sizeof(struct EnvCell)));
 }
 
 void Environment_addValue(Environment *e, char *Id, int value){
-    Environment newCell = Env_allocCell();
+    Environment newCell = Environment_allocCell();
     strcpy(newCell->Id,Id);
     newCell->val = value;
     newCell->next = *e;
@@ -26,16 +26,22 @@ void Environment_addValue(Environment *e, char *Id, int value){
 }
 
 int Environment_getValue(Environment e, char *Id){
-    return Env_searchCell(e, Id)->val;
+    Environment cell = Environment_searchCell(e, Id);
+    if(cell != NULL){
+        return cell->val;
+    }
+    else {
+        return NULL;
+    }
 }
 
-Environment Env_searchCell(Environment e, char *Id){
+Environment Environment_searchCell(Environment e, char *Id){
     if(e != NULL){
         if(strcmp(e->Id,Id)==0){
             return e;
         }
         else
-            return Env_searchCell(e->next,Id);
+            return Environment_searchCell(e->next, Id);
     }
     else
         return NULL;
@@ -47,6 +53,6 @@ void Environment_printEnv(Environment e){
     }
     else {
         printf("(%s:%d)", e->Id, e->val);
-        Env_printEnv(e->next);
+        Environment_printEnv(e->next);
     }
 }
