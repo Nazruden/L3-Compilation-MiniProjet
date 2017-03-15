@@ -3,8 +3,8 @@
 	#include <stdio.h>
 	#include <string.h>
 	#include "include/Environment.h"
-	#include "include/Quadruplet.h"
 	// Specific
+	#include "include/Quadruplet.h"
 	#include "include/C3A_Compiler.h"
 
 	int yyerror(char *s);
@@ -16,11 +16,11 @@
 
     /* Types used */
 	%union {
+		Quad quad;
+        Bilquad bilquad;
+		Arg *arg;
 		int constant;
-		char* var;
-		struct Arg* arg;
-		struct Quad quad;
-		struct Bilquad* bilquad;
+        char *var;
 	}
 
     // Arguments / values
@@ -37,13 +37,11 @@
 	// OPERATORS
 	%token Open Close Pl Mo Mu Af Afc Sk Jp Jz St Sp Se Minus Plus
 
-
     // ASSOCIATIVITY
     %left Se
 	%left Pl Mo
 	%left Mu
 	%left Open
-
 
 %%
 

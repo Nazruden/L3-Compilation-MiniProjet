@@ -1,7 +1,3 @@
-//
-// Created by nazruden on 3/14/17.
-//
-
 #ifndef PROJET_SYNTAX_TREE_H
 #define PROJET_SYNTAX_TREE_H
 #include <stdlib.h>

@@ -1,7 +1,3 @@
-//
-// Created by nazruden on 3/12/17.
-//
-
 #ifndef PROJET_ARGUMENT_H
 #define PROJET_ARGUMENT_H
 

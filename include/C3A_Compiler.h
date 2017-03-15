@@ -1,5 +1,5 @@
 #ifndef PROJET_C3A_COMPILER_H
-#define Comp_C3A_H
+#define PROJET_C3A_COMPILER_H
 
 #include "Environment.h"
 #include "Quadruplet.h"
@@ -36,4 +36,4 @@ void C3A_compile_in_Y86(struct Bilquad* list);
 **/
 void C3A_Y86_translater(struct Quad* q, int memory_begin, Environment* vOffset);
 
-#endif
+#endif //PROJET_C3A_COMPILER_H

@@ -1,9 +1,4 @@
-//
-// Created by nazruden on 3/12/17.
-//
-
 #include "C3A_Interpretor.h"
-#include "Quadruplet.h"
 
 void C3A_Interpretor_simulate(Bilquad b, Environment e){
     /* The current quad being executed */
@@ -79,6 +74,5 @@ Quad C3A_Interpretor_executeQuad(Quad q, Environment e, Bilquad b){
             return NULL;
         default:
             return NULL;
-
     }
 }
